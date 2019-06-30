@@ -1,12 +1,19 @@
 .crystals {
   display: flex;
   justify-content: space-around; 
-  align-items: center; 
+  align-items: contain; 
 }
 
 .crystal {
   border: 1px solid green; 
   height: 300px; 
   width: 300px; 
+}
+
+body {
+background-image: url(../images/collector.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+
 }
 
