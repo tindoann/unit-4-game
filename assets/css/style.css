@@ -1,0 +1,12 @@
+.crystals {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center; 
+}
+
+.crystal {
+  border: 1px solid green; 
+  height: 300px; 
+  width: 300px; 
+}
+
