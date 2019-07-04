@@ -11,7 +11,8 @@ $(document).ready(function () {
   function gameStart() {
 
     // $('.crystals').empty(); 
-    count = 0;
+    count = 0; 
+
     // The random number shown at the start of the game should be between 19 - 120. 
 
     randNum = Math.floor(Math.random() * 120) + 19;
@@ -47,16 +48,21 @@ $(document).ready(function () {
     }
 
     // Your game will hide this amount until the player clicks a crystal.
-
-    winner = () => {
+    
+      winner = () => {
+      alert("You win!");
       wins++
       $("#wins").html(wins);
-    }
+      counter = 0; 
 
-    loser = () => {
+      }
+  
+      loser = () => {
+      alert('You Lose!');
       losses++;
       $("#losses").html(losses);
-    }
+      counter = 0; 
+      }
 
     $('.crystal').on('click', function () {
 
@@ -69,20 +75,18 @@ $(document).ready(function () {
       // The player wins if their total score matches the random number from the beginning of the game. 
 
       if (counter == randNum) {
-        alert("You win!");
         winner();
         reset();
 
 
       } else if (counter > randNum) {
-        alert('You Lose!');
-        loser();
+        loser(); 
         reset();
 
       } else {
         $('#total').html(counter);
       }
-
+      
     });
 
   }
@@ -92,7 +96,6 @@ $(document).ready(function () {
 
   reset = () => {
     randNum = Math.floor(Math.random() * 120) + 19;
-    counter = 0;
     $("#randNum").html(randNum);
     $("#total").html(0);
   }
